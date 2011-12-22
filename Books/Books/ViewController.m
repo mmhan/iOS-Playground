@@ -21,31 +21,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    NSString *bookTitle = @"Brave new world";
-    NSString *bookTitle2 = bookTitle;
-    bookTitle2 = @"Catch-22";
+	
+    NSArray *bookTitles = [NSArray arrayWithObjects:@"Brave new world", @"Call of the Wild", @"Catch-22", @"Atlas Shrugged", nil];
+    NSLog(@"%@", bookTitles);
+    
+    NSLog(@"%i", [bookTitles count]);
+    
+    NSString *string = [bookTitles objectAtIndex:3];
+    NSLog(@"%@", string);
+    
+    int index = [bookTitles indexOfObject:@"Catch-22"];
+    NSLog(@"Index of Catch-22 %@", index);
+    
+    bool ret = [bookTitles containsObject:@"Catch-22"];
+    if(ret){
+        NSLog(@"bookTitles contain Catch-22");
+    }else{
+        NSLog(@"bookTitles does not contain Catch-22");
+    }
     
     
-    //looking at string that is alloc in memory.
-    NSLog(@"%p - %@", bookTitle, bookTitle);
-    NSLog(@"%p - %@", bookTitle2, bookTitle2);
+    NSMutableArray *booksMutable = [NSMutableArray arrayWithCapacity:0];
     
-    NSString *bookAuthor = @"Aldous Huxley";
-    int datePublished = 1932;
-    
-    NSString *book = [NSString stringWithFormat:@"%@ by %@ (%i)", bookTitle, bookAuthor, datePublished];
-    NSLog(@"%@", book);
-    
-    
-    NSMutableString *bookMutable = [NSMutableString stringWithString:bookTitle];
-    NSLog(@"%p - %@", bookMutable, bookMutable);
-    
-    [bookMutable appendString:bookAuthor];
-    NSLog(@"%p - %@", bookMutable, bookMutable);
-    
-    [bookMutable appendFormat:[NSString stringWithFormat:@"%i", datePublished]];
-    NSLog(@"%p - %@", bookMutable, bookMutable);
+    [booksMutable addObject:@"Brave new World"]; //adds to end of the array.
+    [booksMutable insertObject:@"Call of the Wild" atIndex:0];
+    [booksMutable removeObjectAtIndex:0];
+    [booksMutable removeLastObject];
+    [booksMutable removeAllObjects];
 }
 
 - (void)viewDidUnload
