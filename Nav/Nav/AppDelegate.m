@@ -12,11 +12,22 @@
 
 @synthesize window = _window;
 
+@synthesize navController = _navController;
+@synthesize listController = _listController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    _listController = [[ListViewController alloc] initWithNibName:@"ListViewController"
+                                                           bundle:nil];
+    _navController = [[UINavigationController alloc] initWithRootViewController:_listController];
+    
+    self.window.rootViewController = _navController;
+    
+    
     [self.window makeKeyAndVisible];
     
     NSLog(@"didFinishLaunchingWithOptions");

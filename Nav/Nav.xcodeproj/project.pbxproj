@@ -18,6 +18,8 @@
 		27FBE05F14A33C7F0054E13B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FBE04614A33C7F0054E13B /* Foundation.framework */; };
 		27FBE06714A33C7F0054E13B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27FBE06514A33C7F0054E13B /* InfoPlist.strings */; };
 		27FBE06A14A33C7F0054E13B /* NavTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBE06914A33C7F0054E13B /* NavTests.m */; };
+		27FBE07614A33E720054E13B /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBE07414A33E720054E13B /* ListViewController.m */; };
+		27FBE07714A33E720054E13B /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27FBE07514A33E720054E13B /* ListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		27FBE06614A33C7F0054E13B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27FBE06814A33C7F0054E13B /* NavTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavTests.h; sourceTree = "<group>"; };
 		27FBE06914A33C7F0054E13B /* NavTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavTests.m; sourceTree = "<group>"; };
+		27FBE07314A33E720054E13B /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		27FBE07414A33E720054E13B /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		27FBE07514A33E720054E13B /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,9 @@
 			children = (
 				27FBE05314A33C7F0054E13B /* AppDelegate.h */,
 				27FBE05414A33C7F0054E13B /* AppDelegate.m */,
+				27FBE07314A33E720054E13B /* ListViewController.h */,
+				27FBE07414A33E720054E13B /* ListViewController.m */,
+				27FBE07514A33E720054E13B /* ListViewController.xib */,
 				27FBE04B14A33C7F0054E13B /* Supporting Files */,
 			);
 			path = Nav;
@@ -215,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FBE04F14A33C7F0054E13B /* InfoPlist.strings in Resources */,
+				27FBE07714A33E720054E13B /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +260,7 @@
 			files = (
 				27FBE05114A33C7F0054E13B /* main.m in Sources */,
 				27FBE05514A33C7F0054E13B /* AppDelegate.m in Sources */,
+				27FBE07614A33E720054E13B /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
