@@ -38,7 +38,14 @@
     NSLog(@"%@", book);
     
     
+    NSMutableString *bookMutable = [NSMutableString stringWithString:bookTitle];
+    NSLog(@"%p - %@", bookMutable, bookMutable);
     
+    [bookMutable appendString:bookAuthor];
+    NSLog(@"%p - %@", bookMutable, bookMutable);
+    
+    [bookMutable appendFormat:[NSString stringWithFormat:@"%i", datePublished]];
+    NSLog(@"%p - %@", bookMutable, bookMutable);
 }
 
 - (void)viewDidUnload
