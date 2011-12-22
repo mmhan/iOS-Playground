@@ -10,6 +10,9 @@
 
 @implementation ListViewController
 
+@synthesize data = _data;
+@synthesize detailViewController = _detailViewController;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -38,6 +41,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"Root View";
+    self.data = [[NSArray alloc] initWithObjects:@"One", @"Two", nil];
+    self.detailViewController = [[DetailViewController alloc] init];
 }
 
 - (void)viewDidUnload
@@ -50,6 +56,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -77,16 +84,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,6 +104,7 @@
     }
     
     // Configure the cell...
+    cell.textLabel.text = [_data objectAtIndex:indexPath.row]; 
     
     return cell;
 }
@@ -153,6 +159,16 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    if (indexPath.row == 0){
+        DetailViewController *dvc = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        
+        dvc.title = [_data objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:dvc animated:YES];
+    }else{
+        _detailViewController.title = [_data objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:_detailViewController animated:YES];
+    }
 }
 
 @end

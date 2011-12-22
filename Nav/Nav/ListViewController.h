@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DetailViewController.h"
+
 @interface ListViewController : UITableViewController
+
+@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) DetailViewController *detailViewController;
+
 
 @end
