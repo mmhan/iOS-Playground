@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 
 @implementation DetailViewController
+@synthesize label;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +39,7 @@
 
 - (void)viewDidUnload
 {
+    [self setLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -46,7 +48,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait ||
+            interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+        self.label.hidden = YES;
+    else
+        self.label.hidden = NO;
 }
 
 @end
