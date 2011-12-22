@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "Car.h"
-#import "Sedan.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -22,7 +19,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    
+    /** User's code **/
     Car *aCar = [[Car alloc] init];
     
     Sedan *aSedan = [[Sedan alloc] init];
@@ -35,7 +32,21 @@
     [aSedan park];
     [aSedan drive];
     
+    [self addCarToList: aCar];
+    [self addCarToList: aSedan];
+    
+    //using id as argument, the following will pass compiler and compile successfully.
+    //but will generate a runtime error.
+    //[self addCarToList:@"car"];
+    
+    /** User's code end here **/
+    
     return YES;
+}
+
+- (void)addCarToList: (id) anyCar{
+    [anyCar park];
+    [anyCar drive];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

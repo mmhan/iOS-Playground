@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Car.h"
+#import "Sedan.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void)addCarToList: (id) anyCar;
 
 @end

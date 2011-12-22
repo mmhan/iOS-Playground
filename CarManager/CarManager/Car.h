@@ -15,8 +15,7 @@
 
 @property int doors;
 
-+ (int) wheels;
-
 - (void) drive;
++ (int) wheels;
 
 @end
