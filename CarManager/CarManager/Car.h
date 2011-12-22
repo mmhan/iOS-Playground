@@ -17,5 +17,6 @@
 
 - (void) drive;
 + (int) wheels;
+- (BOOL) flies;
 
 @end

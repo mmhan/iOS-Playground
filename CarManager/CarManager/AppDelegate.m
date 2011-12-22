@@ -29,16 +29,22 @@
     int doors = aSedan.doors;
     int wheels = [Sedan wheels];
     
+    
+    if( [aCar flies] ){
+        
+    }
+    
     [aSedan park];
     [aSedan drive];
     
     [self addCarToList: aCar];
     [self addCarToList: aSedan];
+    [self addCarToList:nil];
     
-    //using id as argument, the following will pass compiler and compile successfully.
-    //but will generate a runtime error.
-    //From: the version after 131a8ec, the following line will compile due to type casting in, addCarToList()
-    [self addCarToList:@"car"];
+    
+    //nil is not gonna raise NullPointerException.
+    NSString *string = [NSString stringWithString:nil];
+    [string lowercaseString]; //no exception.
     
     /** User's code end here **/
     

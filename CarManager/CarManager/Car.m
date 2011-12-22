@@ -23,4 +23,8 @@
     return 4;
 }
 
+- (BOOL) flies{
+    return NO;
+}
+
 @end
