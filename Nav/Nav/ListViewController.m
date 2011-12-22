@@ -44,6 +44,10 @@
     self.title = @"Root View";
     self.data = [[NSArray alloc] initWithObjects:@"One", @"Two", nil];
     self.detailViewController = [[DetailViewController alloc] init];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self
+                                              action:@selector(showAbout)];
 }
 
 - (void)viewDidUnload
@@ -171,6 +175,17 @@
         _detailViewController.title = [_data objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:_detailViewController animated:YES];
     }
+}
+
+#pragma mark - showAbout
+
+- (void) showAbout{
+    AboutViewController *abv = [[AboutViewController alloc] init];
+    
+    abv.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self.navigationController presentModalViewController:abv animated:YES];
+    
 }
 
 @end

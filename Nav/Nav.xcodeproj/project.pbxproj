@@ -22,6 +22,8 @@
 		27FBE07714A33E720054E13B /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27FBE07514A33E720054E13B /* ListViewController.xib */; };
 		27FBE07B14A3445E0054E13B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBE07914A3445E0054E13B /* DetailViewController.m */; };
 		27FBE07C14A3445E0054E13B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27FBE07A14A3445E0054E13B /* DetailViewController.xib */; };
+		27FBE08014A34D3A0054E13B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FBE07E14A34D3A0054E13B /* AboutViewController.m */; };
+		27FBE08114A34D3A0054E13B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27FBE07F14A34D3A0054E13B /* AboutViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		27FBE07814A3445E0054E13B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		27FBE07914A3445E0054E13B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		27FBE07A14A3445E0054E13B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		27FBE07D14A34D3A0054E13B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		27FBE07E14A34D3A0054E13B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		27FBE07F14A34D3A0054E13B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +130,9 @@
 				27FBE07814A3445E0054E13B /* DetailViewController.h */,
 				27FBE07914A3445E0054E13B /* DetailViewController.m */,
 				27FBE07A14A3445E0054E13B /* DetailViewController.xib */,
+				27FBE07D14A34D3A0054E13B /* AboutViewController.h */,
+				27FBE07E14A34D3A0054E13B /* AboutViewController.m */,
+				27FBE07F14A34D3A0054E13B /* AboutViewController.xib */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 				27FBE04F14A33C7F0054E13B /* InfoPlist.strings in Resources */,
 				27FBE07714A33E720054E13B /* ListViewController.xib in Resources */,
 				27FBE07C14A3445E0054E13B /* DetailViewController.xib in Resources */,
+				27FBE08114A34D3A0054E13B /* AboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +280,7 @@
 				27FBE05514A33C7F0054E13B /* AppDelegate.m in Sources */,
 				27FBE07614A33E720054E13B /* ListViewController.m in Sources */,
 				27FBE07B14A3445E0054E13B /* DetailViewController.m in Sources */,
+				27FBE08014A34D3A0054E13B /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

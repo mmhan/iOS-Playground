@@ -10,6 +10,9 @@
 
 #import "DetailViewController.h"
 
+#import "AboutViewController.h"
+
+
 @interface ListViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *data;
