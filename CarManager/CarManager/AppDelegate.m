@@ -37,7 +37,8 @@
     
     //using id as argument, the following will pass compiler and compile successfully.
     //but will generate a runtime error.
-    //[self addCarToList:@"car"];
+    //From: the version after 131a8ec, the following line will compile due to type casting in, addCarToList()
+    [self addCarToList:@"car"];
     
     /** User's code end here **/
     
@@ -45,8 +46,16 @@
 }
 
 - (void)addCarToList: (id) anyCar{
-    [anyCar park];
-    [anyCar drive];
+    
+    //Type casting.
+    Car *someCar = (Car *) anyCar;
+    
+    if(someCar){
+        [someCar drive];
+        //[someCar park]; 
+        //though the vid shows that it compiles, it actually doesn't due to previous line
+        //mainly cos park is not a method of car.
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
