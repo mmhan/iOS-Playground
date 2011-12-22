@@ -23,29 +23,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     NSString *bookTitle = @"Brave new world";
+    NSString *bookTitle2 = bookTitle;
+    bookTitle2 = @"Catch-22";
+    
+    
+    //looking at string that is alloc in memory.
+    NSLog(@"%p - %@", bookTitle, bookTitle);
+    NSLog(@"%p - %@", bookTitle2, bookTitle2);
+    
     NSString *bookAuthor = @"Aldous Huxley";
     int datePublished = 1932;
     
     NSString *book = [NSString stringWithFormat:@"%@ by %@ (%i)", bookTitle, bookAuthor, datePublished];
-    
     NSLog(@"%@", book);
     
-    //Substring Function
-    NSLog(@"%@", [book substringFromIndex:5]);
-    NSLog(@"%@", [book substringToIndex:2]);
     
-    //starting point and length
-    NSLog(@"%@", [book substringWithRange:NSMakeRange(6, 3)]);
     
-    NSLog(@"%@", [book stringByReplacingOccurrencesOfString:@" " withString:@"!"]);
-    
-    if (
-        [bookTitle isEqualToString:@"Brave new world"]
-        ==
-        [@"Brave new world" isEqualToString:bookTitle]
-    ){ 
-        NSLog(@"You can use interchangebly for [@\"\" isEqualTString:stringVar]");
-    }
 }
 
 - (void)viewDidUnload
