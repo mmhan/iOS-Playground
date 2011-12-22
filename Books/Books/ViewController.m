@@ -21,33 +21,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    NSArray *bookTitles = [NSArray arrayWithObjects:@"Brave new world", @"Call of the Wild", @"Catch-22", @"Atlas Shrugged", nil];
-    NSLog(@"%@", bookTitles);
     
-    NSLog(@"%i", [bookTitles count]);
+    NSString *bookTitle = @"Brave new world";
+    NSString *bookAuthor = @"Aldous Huxley";
+    int datePublished = 1932;
     
-    NSString *string = [bookTitles objectAtIndex:3];
-    NSLog(@"%@", string);
+    NSString *book = [NSString stringWithFormat:@"%@ by %@ (%i)", bookTitle, bookAuthor, datePublished];
     
-    int index = [bookTitles indexOfObject:@"Catch-22"];
-    NSLog(@"Index of Catch-22 %@", index);
+    NSDictionary *bookDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                              bookTitle, @"title", bookAuthor, @"author", 
+                              [NSNumber numberWithInt:datePublished], @"datePublished", 
+                              nil];
+    NSLog(@"bookDict - %@", bookDict);
+    NSLog(@"name - %@", [bookDict objectForKey:@"title"]);
+    NSLog(@"author - %@", [bookDict objectForKey:@"author"]);
+    NSLog(@"published - %i", [[bookDict objectForKey:@"published"] intValue]);
     
-    bool ret = [bookTitles containsObject:@"Catch-22"];
-    if(ret){
-        NSLog(@"bookTitles contain Catch-22");
-    }else{
-        NSLog(@"bookTitles does not contain Catch-22");
-    }
+    NSMutableDictionary *mutableDict = [NSMutableDictionary 
+                                        dictionaryWithDictionary:bookDict];
     
-    
-    NSMutableArray *booksMutable = [NSMutableArray arrayWithCapacity:0];
-    
-    [booksMutable addObject:@"Brave new World"]; //adds to end of the array.
-    [booksMutable insertObject:@"Call of the Wild" atIndex:0];
-    [booksMutable removeObjectAtIndex:0];
-    [booksMutable removeLastObject];
-    [booksMutable removeAllObjects];
+    [mutableDict setValue:@"123123123" forKey:@"isbn"];
+    NSLog(@"mutated book - %@", mutableDict);
 }
 
 - (void)viewDidUnload
